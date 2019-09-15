@@ -1,0 +1,72 @@
+{
+    "type": "object",
+    "properties": {
+        "body": {
+            "type": "array",
+            "items": {
+                "type": "object",
+                "properties": {
+                    "depart": {
+                        "type": "string"
+                    },
+                    "arrive": {
+                        "type": "string"
+                    },
+                    "flight": {
+                        "type": "object",
+                        "properties": {
+                            "code": {
+                                "type": "string"
+                            },
+                            "number": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "code",
+                            "number"
+                        ]
+                    },
+                    "airline": {
+                        "type": "string"
+                    },
+                    "isDirectFlight": {
+                        "type": "boolean"
+                    },
+                    "flightStatus": {
+                        "type": "string",
+                        "enum": [
+                            "SCHEDULED",
+                            "DELAYED",
+                            "DIVERTED"
+                        ]
+                    },
+                    "aircraft": {
+                        "type": "object",
+                        "properties": {
+                            "manufacturer": {
+                                "type": "string"
+                            },
+                            "model": {
+                                "type": "string"
+                            }
+                        },
+                        "required": [
+                            "manufacturer",
+                            "model"
+                        ]
+                    }
+                },
+                "required": [
+                    "aircraft",
+                    "airline",
+                    "arrive",
+                    "depart",
+                    "flight",
+                    "flightStatus",
+                    "isDirectFlight"
+                ]
+            }
+        }
+    }
+}
